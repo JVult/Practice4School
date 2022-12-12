@@ -1,0 +1,24 @@
+﻿@using Practice4School.Models;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<li>
+    @foreach (Item item in Model)
+    {
+        <ul>
+            <div> 
+                @item.Id ! @item.Name !
+                <a asp-action="Edit"> Edit </a> !
+                <a asp-action="Delete" asp-route-id= "@item.Id"> Delete </a>
+            </div>
+        </ul>
+    }
+</li>
+
